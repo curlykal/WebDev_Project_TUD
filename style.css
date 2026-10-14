@@ -10,6 +10,10 @@ body {
     text-align: center;
 }
 
+[hidden] {
+    display: none !important;
+}
+
 .page-shell {
     display: flex;
     align-items: center;
@@ -80,6 +84,160 @@ footer span:last-child {
     color: #ea00ff;
 }
 
+.profile-trigger {
+    position: fixed;
+    z-index: 10;
+    top: 1rem;
+    right: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.55rem 0.9rem 0.55rem 0.55rem;
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 999px;
+    background: #fff;
+    color: #1d3557;
+    font: bold 0.95rem Verdana, sans-serif;
+    box-shadow: 0 5px 16px rgba(29, 53, 87, 0.18);
+    cursor: pointer;
+}
+
+.profile-trigger-avatar,
+.profile-avatar {
+    display: inline-grid;
+    place-items: center;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background: #5778c5;
+    color: #fff;
+    font-weight: bold;
+}
+
+.profile-trigger-avatar {
+    width: 2rem;
+    height: 2rem;
+}
+
+.profile-trigger:hover,
+.profile-trigger:focus-visible,
+.profile-close:hover,
+.profile-close:focus-visible {
+    outline: 3px solid rgba(87, 120, 197, 0.45);
+    outline-offset: 2px;
+}
+
+.profile-backdrop {
+    position: fixed;
+    z-index: 19;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: rgba(17, 31, 53, 0.38);
+    cursor: pointer;
+}
+
+.profile-sidebar {
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    width: min(88vw, 340px);
+    height: 100vh;
+    padding: 1.5rem;
+    background: #fff;
+    color: #1d3557;
+    text-align: left;
+    box-shadow: -12px 0 32px rgba(17, 31, 53, 0.2);
+    transform: translateX(105%);
+    visibility: hidden;
+    transition: transform 220ms ease, visibility 220ms;
+}
+
+.profile-sidebar.is-open {
+    transform: translateX(0);
+    visibility: visible;
+}
+
+.profile-sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.profile-sidebar-header h2 {
+    margin: 0;
+    font-size: 1.35rem;
+}
+
+.profile-close {
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 0;
+    border-radius: 50%;
+    background: #edf3ff;
+    color: #1d3557;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.profile-card {
+    display: grid;
+    justify-items: center;
+    margin: 2.5rem 0 1.5rem;
+    padding: 1.5rem 1rem;
+    border-radius: 16px;
+    background: #edf5ff;
+    text-align: center;
+}
+
+.profile-avatar {
+    width: 4rem;
+    height: 4rem;
+    font-size: 1.5rem;
+}
+
+.profile-card h3 {
+    margin: 0.9rem 0 0.25rem;
+}
+
+.profile-card p,
+.profile-note {
+    margin: 0;
+    color: #52647f;
+    line-height: 1.5;
+}
+
+.profile-nav {
+    display: grid;
+    gap: 0.5rem;
+    margin: 0;
+}
+
+.profile-nav a {
+    padding: 0.85rem 1rem;
+    border-radius: 10px;
+    color: #1d3557;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.profile-nav a:hover,
+.profile-nav a:focus-visible {
+    outline: none;
+    background: #edf5ff;
+}
+
+.profile-note {
+    margin-top: auto;
+    padding-top: 2rem;
+    font-size: 0.9rem;
+}
+
 @media (max-width: 760px) {
     .page-shell {
         flex-direction: column;
@@ -88,5 +246,24 @@ footer span:last-child {
 
     .side-art {
         width: min(60vw, 220px);
+    }
+
+    .profile-trigger-label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+    }
+
+    .profile-trigger {
+        padding: 0.4rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .profile-sidebar {
+        transition: none;
     }
 }

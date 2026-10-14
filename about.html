@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anime Haven | About Us</title>
     <link rel="stylesheet" href="style.css">
+    <script src="profile.js" defer></script>
 </head>
 
 <body>
@@ -50,6 +51,29 @@
                 <p><a href="index.html">Back to Home</a></p>
             </footer>
         </main>
+    </div>
 
+    <button class="profile-trigger" type="button" aria-controls="profile-sidebar" aria-expanded="false">
+        <span class="profile-trigger-avatar" aria-hidden="true">S</span>
+        <span class="profile-trigger-label">Profile</span>
+    </button>
+
+    <button class="profile-backdrop" type="button" aria-label="Close profile sidebar" tabindex="-1" hidden></button>
+    <aside class="profile-sidebar" id="profile-sidebar" role="dialog" aria-modal="true" aria-labelledby="profile-title" aria-hidden="true" inert>
+        <div class="profile-sidebar-header">
+            <h2 id="profile-title">Your profile</h2>
+            <button class="profile-close" type="button" aria-label="Close profile sidebar">&times;</button>
+        </div>
+        <div class="profile-card">
+            <span class="profile-avatar" aria-hidden="true">S</span>
+            <h3>Sofia Martinez</h3>
+            <p>Anime Haven fan</p>
+        </div>
+        <nav class="profile-nav" aria-label="Profile navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Anime Haven</a>
+        </nav>
+        <p class="profile-note">Discover stories, genres, and your next favorite series.</p>
+    </aside>
 </body>
 </html>
