@@ -51,10 +51,68 @@ nav {
     margin: 1rem 0;
 }
 
-nav a {
+.primary-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.primary-navigation .nav-link {
+    display: inline-block;
+    padding: 0.55rem 1rem;
+    border: 2px solid #5778c5;
+    border-radius: 999px;
+    background: #fff;
     color: #1d3557;
     font-weight: bold;
     text-decoration: none;
+}
+
+.primary-navigation .nav-link[aria-current="page"] {
+    background: #1d3557;
+    border-color: #1d3557;
+    color: #fff;
+}
+
+.text-size-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.text-size-controls button {
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+    padding: 0.4rem 0.65rem;
+    border: 1px solid #5778c5;
+    border-radius: 0.5rem;
+    background: #fff;
+    color: #1d3557;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.text-size-value {
+    min-width: 3.5rem;
+    font-weight: bold;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #e85d04;
+    outline-offset: 3px;
+}
+
+.primary-navigation .nav-link:hover {
+    background: #dce8ff;
+}
+
+.primary-navigation .nav-link[aria-current="page"]:hover {
+    background: #294d7d;
 }
 
 ul,

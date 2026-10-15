@@ -15,11 +15,18 @@
             <header>
                 <h1>About Anime Haven</h1>
                 <p>A fun place for anime fans to discover new stories, characters, and series.</p>
+                <div class="text-size-controls" role="group" aria-label="Text size controls">
+                    <span>Text size</span>
+                    <button type="button" data-font-size="decrease" aria-label="Decrease text size">A−</button>
+                    <output class="text-size-value" aria-live="polite" aria-atomic="true">100%</output>
+                    <button type="button" data-font-size="increase" aria-label="Increase text size">A+</button>
+                    <button type="button" data-font-size="reset">Reset</button>
+                </div>
             </header>
 
-            <nav>
-                <a href="index.html">Home</a> |
-                <a href="about.html">About</a>
+            <nav class="primary-navigation" aria-label="Main navigation">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="about.html" aria-current="page">About</a>
             </nav>
 
             <section>
@@ -29,7 +36,7 @@
                     explore new series and celebrate their favorite parts of anime culture.
                 </p>
 
-                <img src="https://images.unsplash.com/photo-1636394574049-7e6a8c7658c6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="120" height="150">
+                <img src="https://images.unsplash.com/photo-1636394574049-7e6a8c7658c6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="120" height="150" alt="Anime-inspired artwork">
             </section>
 
             <section>
@@ -58,7 +65,7 @@
         <span class="profile-trigger-label">Profile</span>
     </button>
 
-    <button class="profile-backdrop" type="button" aria-label="Close profile sidebar" tabindex="-1" hidden></button>
+    <div class="profile-backdrop" aria-hidden="true" hidden></div>
     <aside class="profile-sidebar" id="profile-sidebar" role="dialog" aria-modal="true" aria-labelledby="profile-title" aria-hidden="true" inert>
         <div class="profile-sidebar-header">
             <h2 id="profile-title">Your profile</h2>

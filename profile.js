@@ -3,6 +3,36 @@ const profileSidebar = document.querySelector(".profile-sidebar");
 const profileBackdrop = document.querySelector(".profile-backdrop");
 const profileClose = document.querySelector(".profile-close");
 
+const fontSizeControls = document.querySelector(".text-size-controls");
+
+if (fontSizeControls) {
+    const sizeOutput = fontSizeControls.querySelector(".text-size-value");
+    let fontSize = 100;
+
+    const updateFontSize = () => {
+        document.documentElement.style.fontSize = `${fontSize}%`;
+        sizeOutput.value = `${fontSize}%`;
+        sizeOutput.textContent = `${fontSize}%`;
+    };
+
+    fontSizeControls.addEventListener("click", (event) => {
+        const button = event.target.closest("button[data-font-size]");
+        if (!button) {
+            return;
+        }
+
+        if (button.dataset.fontSize === "increase") {
+            fontSize = Math.min(fontSize + 10, 150);
+        } else if (button.dataset.fontSize === "decrease") {
+            fontSize = Math.max(fontSize - 10, 80);
+        } else {
+            fontSize = 100;
+        }
+
+        updateFontSize();
+    });
+}
+
 if (profileTrigger && profileSidebar && profileBackdrop && profileClose) {
     const closeProfile = () => {
         profileSidebar.classList.remove("is-open");
