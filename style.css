@@ -66,7 +66,7 @@ nav {
 .primary-navigation .nav-link {
     display: inline-block;
     padding: 0.55rem 1rem;
-    border: 2px solid #5778c5;
+    border: 4px solid #5778c5;
     border-radius: 999px;
     background: #fff;
     color: #1d3557;
@@ -125,6 +125,45 @@ ul,
 ol {
     list-style-position: inside;
     padding-left: 0;
+}
+
+.anime-recommendations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.anime-card {
+    overflow: hidden;
+    border: 1px solid rgba(29, 53, 87, 0.2);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.8);
+    text-align: left;
+}
+
+.anime-card-featured {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: min(100%, 300px);
+}
+
+.anime-cover {
+    display: grid;
+    min-height: 110px;
+    place-items: center;
+    margin: 0;
+    padding: 1rem;
+    background: #1d5fa7;
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.anime-card p {
+    margin: 0;
+    padding: 1rem;
 }
 
 .side-art {
